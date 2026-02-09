@@ -7,12 +7,11 @@ authors = [
     {name = "00SEC Ghana"}
 ]
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 keywords = ["security", "ai", "OSINT", "reconnaissance"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Information Technology",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.12",
     "Topic :: Security"
 ]
@@ -31,7 +30,11 @@ dependencies = [
 ]
 
 [project.scripts]
-oselot="oselot_cli:main"
+oselot = "oselot_cli:main"
+
+[tool.setuptools]
+py-modules = ["oselot_cli", "agent", "prompt", "tools"]
+package-dir = {"" = "src"}
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
